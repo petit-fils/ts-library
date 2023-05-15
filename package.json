@@ -1,0 +1,54 @@
+{
+  "name": "ts-library",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+	"author": {
+		"name": "Ed Shamshurin",
+		"email": "surname.shamshurin@gmail.com"
+	},
+  "license": "ISC",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "prepublishOnly": "nr build",
+    "release": "bumpp && npm publish",
+    "start": "tsx src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "bumpp": "^9.1.0",
+    "pnpm": "^8.5.1",
+    "tsx": "^3.12.7",
+    "typescript": "^5.0.4",
+    "unbuild": "^1.2.1",
+    "vite": "^4.3.5",
+    "vitest": "^0.31.0"
+  },
+  "packageManager": "pnpm@8.5.1"
+
+}
